@@ -18,28 +18,28 @@ const onboardingData = [
     title: "Welcome to Time Tourism",
     description:
       "Discover the ultimate time travel adventure platform. Book journeys through history with just a few taps.",
-    image: require("../../../assets/onboarding1.png"), // Make sure to create these assets
+    // image: require("../../../assets/onboarding1.png"), // Make sure to create these assets
   },
   {
     id: "2",
     title: "Explore Historical Periods",
     description:
       "Browse through different eras and learn fascinating details about history's most interesting time periods.",
-    image: require("../../../assets/onboarding2.png"),
+    // image: require("../../../assets/onboarding2.png"),
   },
   {
     id: "3",
     title: "Book Time Travel Tours",
     description:
       "Choose from a variety of tours, from witnessing the construction of the pyramids to experiencing the Renaissance firsthand.",
-    image: require("../../../assets/onboarding3.png"),
+    // image: require("../../../assets/onboarding3.png"),
   },
   {
     id: "4",
     title: "Experience History Safely",
     description:
       "All our time travel experiences adhere to strict temporal regulations ensuring your safety and the integrity of the timeline.",
-    image: require("../../../assets/onboarding4.png"),
+    // image: require("../../../assets/onboarding4.png"),
   },
 ];
 
