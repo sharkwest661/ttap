@@ -1,28 +1,60 @@
 {
   "expo": {
-    "name": "time-tourism-app",
+    "name": "Time Tourism App",
     "slug": "time-tourism-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#4A6FA5"
     },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourusername.timetourismapp",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "This app uses Face ID to authenticate time travel bookings.",
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to display nearby historical facts."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#4A6FA5"
+      },
+      "package": "com.yourusername.timetourismapp",
+      "permissions": [
+        "CAMERA",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#4A6FA5"
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow Time Tourism App to use Face ID to authenticate your time travel bookings."
+        }
+      ],
+      "expo-location"
+    ]
   }
 }
