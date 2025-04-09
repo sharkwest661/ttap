@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
+import { ThemeProvider } from "@shopify/restyle";
+import { NavigationContainer } from "@react-navigation/native";
+
+import theme from "./src/theme";
+import Navigation from "./src/navigation";
+import { useThemeStore } from "./src/store/themeStore";
 
 export default function App() {
+  const isDarkMode = useThemeStore((state) => state.isDarkMode);
+  const currentTheme = isDarkMode ? theme.darkTheme : theme.lightTheme;
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <ThemeProvider theme={currentTheme}>
+        <NavigationContainer>
+          <StatusBar style={isDarkMode ? "light" : "dark"} />
+          <Navigation />
+        </NavigationContainer>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
